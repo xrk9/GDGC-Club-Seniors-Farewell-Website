@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Fira+Code:wght@300;400;500;700&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MATRIX HACKER NOIR DESIGN SYSTEM
+ * Pure black + neon digital green. Monospaced. Glow everywhere.
+ */
+
+@theme inline {
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-matrix: var(--matrix);
+  --color-matrix-dim: var(--matrix-dim);
+  --color-matrix-bright: var(--matrix-bright);
+  --color-construct: var(--construct);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0px;
+  --background: #000000;
+  --foreground: #00FF41;
+
+  /* Matrix palette */
+  --matrix: #00FF41;
+  --matrix-dim: #008F11;
+  --matrix-bright: #39FF14;
+  --matrix-shadow: rgba(0, 255, 65, 0.6);
+  --matrix-shadow-soft: rgba(0, 255, 65, 0.25);
+  --construct: #FFFFFF;
+  --pill-red: #FF0033;
+  --pill-blue: #0066FF;
+
+  /* Glow tokens */
+  --glow-text: 0 0 4px var(--matrix-shadow), 0 0 12px var(--matrix-shadow-soft);
+  --glow-text-strong: 0 0 6px var(--matrix), 0 0 18px var(--matrix-shadow), 0 0 36px var(--matrix-shadow-soft);
+  --glow-box: 0 0 8px var(--matrix-shadow), 0 0 24px var(--matrix-shadow-soft), inset 0 0 8px rgba(0, 255, 65, 0.1);
+
+  /* Gradients */
+  --gradient-scanline: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 255, 65, 0.04) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  --gradient-vignette: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  --gradient-crt: linear-gradient(
+    to bottom,
+    rgba(0, 30, 10, 0.15),
+    transparent 10%,
+    transparent 90%,
+    rgba(0, 30, 10, 0.15)
+  );
+
+  /* Shadcn parity (rarely used here) */
+  --card: #000000;
+  --card-foreground: var(--matrix);
+  --popover: #000000;
+  --popover-foreground: var(--matrix);
+  --primary: var(--matrix);
+  --primary-foreground: #000000;
+  --secondary: #001a08;
+  --secondary-foreground: var(--matrix);
+  --muted: #001a08;
+  --muted-foreground: var(--matrix-dim);
+  --accent: var(--matrix-bright);
+  --accent-foreground: #000000;
+  --destructive: var(--pill-red);
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 255, 65, 0.2);
+  --input: rgba(0, 255, 65, 0.2);
+  --ring: var(--matrix);
+}
+
+.dark {
+  /* Same — always dark */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body, #root {
+    background: #000000;
+    color: var(--matrix);
+    font-family: var(--font-mono);
+    overflow: hidden;
+    height: 100%;
+    cursor: crosshair;
+  }
+}
+
+/* === Utility classes === */
+
+.matrix-glow-text {
+  text-shadow: var(--glow-text);
+}
+.matrix-glow-text-strong {
+  text-shadow: var(--glow-text-strong);
+}
+.matrix-glow-box {
+  box-shadow: var(--glow-box);
+  border: 1px solid var(--matrix);
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient-scanline);
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: overlay;
+}
+
+.crt-frame {
+  position: relative;
+  border: 2px solid var(--matrix);
+  box-shadow:
+    0 0 12px var(--matrix-shadow),
+    0 0 40px var(--matrix-shadow-soft),
+    inset 0 0 60px rgba(0, 0, 0, 0.8);
+  background: #000;
+  overflow: hidden;
+}
+.crt-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-vignette);
+  pointer-events: none;
+  z-index: 4;
+}
+.crt-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient-scanline);
+  pointer-events: none;
+  z-index: 5;
+}
+.crt-frame img,
+.crt-frame video {
+  filter: contrast(1.1) saturate(0.4) hue-rotate(70deg) brightness(0.85);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto
+}
+.crt-frame .crt-tint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 60, 20, 0.25);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Blinking cursor */
+.cursor-blink::after {
+  content: "▮";
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: var(--matrix);
+  text-shadow: var(--glow-text-strong);
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+@keyframes cursor-blink {
+  to { visibility: hidden; }
+}
+
+/* Glitch transition */
+@keyframes glitch-out {
+  0%   { transform: translate(0,0) skewX(0deg); filter: hue-rotate(0deg); opacity: 1; }
+  20%  { transform: translate(-6px, 2px) skewX(-3deg); filter: hue-rotate(-30deg) saturate(2); clip-path: inset(20% 0 30% 0); }
+  40%  { transform: translate(8px, -3px) skewX(4deg); filter: hue-rotate(40deg) invert(0.2); clip-path: inset(40% 0 10% 0); }
+  60%  { transform: translate(-3px, 4px) skewX(-1deg); filter: hue-rotate(-50deg) saturate(3); clip-path: inset(10% 0 60% 0); }
+  80%  { transform: translate(4px, -1px); filter: brightness(2) contrast(2); clip-path: inset(50% 0 10% 0); opacity: 0.6; }
+  100% { transform: translate(0,0); opacity: 0; clip-path: inset(0 0 0 0); }
+}
+@keyframes glitch-in {
+  0%   { transform: translate(0,0); opacity: 0; clip-path: inset(0 0 100% 0); filter: brightness(2) hue-rotate(60deg); }
+  30%  { opacity: 0.5; clip-path: inset(0 0 40% 0); transform: translate(-4px, 2px); }
+  60%  { opacity: 0.9; clip-path: inset(0 0 0 0); transform: translate(3px, -1px); filter: hue-rotate(-30deg) saturate(2); }
+  100% { transform: translate(0,0); opacity: 1; filter: none; clip-path: inset(0 0 0 0); }
+}
+.glitch-out { animation: glitch-out 380ms steps(8, end) forwards; }
+.glitch-in  { animation: glitch-in  420ms steps(10, end) forwards; }
+
+/* Typewriter caret */
+.typewriter > .caret {
+  display: inline-block;
+  width: 0.6ch;
+  background: var(--matrix);
+  box-shadow: var(--glow-text-strong);
+  animation: cursor-blink 1s steps(2, start) infinite;
+  margin-left: 2px;
+}
+
+/* Digital rain canvas */
+.rain-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+/* Hidden hover navigation zones */
+.nav-zone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 12vw;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  cursor: pointer;
+}
+.nav-zone:hover { opacity: 1; }
+.nav-zone-left  { left: 0;  background: linear-gradient(to right, rgba(0, 255, 65, 0.08), transparent); }
+.nav-zone-right { right: 0; background: linear-gradient(to left,  rgba(0, 255, 65, 0.08), transparent); }
+.nav-zone .arrow {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  color: var(--matrix);
+  text-shadow: var(--glow-text-strong);
+}
+
+/* Audio visualizer bar */
+@keyframes viz-bar {
+  0%, 100% { transform: scaleY(0.1); }
+  50%      { transform: scaleY(1); }
+}
+.viz-bar {
+  width: 6px;
+  background: var(--matrix);
+  box-shadow: var(--glow-text);
+  transform-origin: bottom;
+  animation: viz-bar 600ms ease-in-out infinite;
+}
+
+/* Bullet time radial */
+@keyframes bullet-spin {
+  to { transform: rotate(360deg); }
+}
+.bullet-ring {
+  position: absolute;
+  inset: -10%;
+  border: 1px dashed var(--matrix);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: bullet-spin 30s linear infinite;
+}
+.bullet-ring.r2 { inset: 5%; animation-duration: 45s; animation-direction: reverse; opacity: 0.25; }
+.bullet-ring.r3 { inset: 18%; animation-duration: 60s; opacity: 0.15; }
+
+/* Construct white void */
+.construct {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+}
+.construct * { color: #000000 !important; text-shadow: none !important; }
+
+/* Slow flicker */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92%      { opacity: 0.85; }
+  94%      { opacity: 1; }
+  96%      { opacity: 0.7; }
+  97%      { opacity: 1; }
+}
+.flicker { animation: flicker 6s infinite; }
+
+/* Fade-in for memes */
+@keyframes meme-pop {
+  from { opacity: 0; transform: scale(0.85) translateY(10px); filter: blur(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+.meme-in { animation: meme-pop 800ms cubic-bezier(0.2, 0.8, 0.3, 1) forwards; opacity: 0; }
