@@ -32,7 +32,7 @@ export function SlideMemes() {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full h-full overflow-hidden bg-[#050505] text-[#00FF41] font-mono">
+    <div className="relative flex items-center justify-center w-full h-full overflow-hidden text-[#00FF41] font-mono">
       
       <style>
         {`
@@ -62,7 +62,7 @@ export function SlideMemes() {
               height: `${meme.size}px`,
               animation: `matrixDrift ${meme.duration} ease-in-out infinite`,
               animationDelay: meme.delay,
-              '--rot': `${meme.rotation}deg`,
+              '--rot': `${meme.rotation}deg`, 
               /* Removed the sepia/green filter for normal visibility */
               filter: "brightness(0.9) contrast(1.1)", 
             }}
