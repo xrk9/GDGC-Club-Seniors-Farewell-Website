@@ -30,7 +30,7 @@ export function SlideMeme({name, tar, tar2, lab} : {name:string; tar:string; tar
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16 w-full max-w-5xl">
         
         {/* 4. THE NAME POINTING TO THE FRAME */}
-        <div className="flex flex-col items-center md:items-end text-matrix-green font-mono transform -translate-y-[180px]">
+        <div className="flex flex-col items-center md:items-end text-matrix-green font-mono transform -translate-y-[120px]">
           {/* Change "CAKE GUY" to the actual person's name */}
           <div className="text-2xl md:text-4xl font-bold whitespace-nowrap matrix-glow-text">
             {name}
@@ -43,7 +43,7 @@ export function SlideMeme({name, tar, tar2, lab} : {name:string; tar:string; tar
 
         {/* 5. THE MEDIA FRAME: Fixed as a square portrait */}
         {/* z-10 keeps it above the background, w-64 h-64 makes it a perfect portrait size */}
-        <div className="w-64 h-64 md:w-140 md:h-140 relative z-10 flex-shrink-0">
+        <div className="w-64 h-64 md:w-130 md:h-130 relative z-10 flex-shrink-0">
           <MediaFrame label={lab} aspect={"1/1"}>
             <img 
               src={memePerson} 

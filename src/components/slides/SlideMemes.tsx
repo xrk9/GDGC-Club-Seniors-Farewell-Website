@@ -81,7 +81,7 @@ export function SlideMemes() {
       {/* FOREGROUND: Central Text Console */}
       <div className="relative z-10 flex flex-col items-center text-center p-8 bg-black/80 backdrop-blur-[2px] border border-[#00FF41]/20 rounded-sm shadow-[0_0_30px_rgba(0,255,65,0.1)]">
         
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter matrix-glow-text-strong mb-2">
+        <h1 className="text-6xl md:text-8xl tracking-tighter matrix-glow-text-strong mb-2">
           <Typewriter
               lines={["MEME REVIEW"]}
               speed={55}
