@@ -23,7 +23,8 @@ import { SlideEnding } from "./slides/SlideEnding";
 import { SlideMusicIntro } from "./slides/SlideMusicIntro";
 
 // videos here
-import video from "@/assets/senior_vdo.mp4"
+import video1 from "@/assets/senior_vdo.mp4"
+import video2 from "@/assets/senior2.mp4"
 
 // images here
 import cake from "@/assets/test.jpg"
@@ -39,7 +40,8 @@ const SLIDES: Slide[] = [
   { id: "getting-started", title: "the matrix has you...", render: () => <SlideGettingStarted /> },
   { id: "cake", title: "slicing the cake", render: () => <SlideCake /> },
   { id: "wishes", title: "WISHES FROM OUR SENIORS", render: () => <SlideWishes /> },
-  { id: "wishe_k", title: "WISHES FROM OUR SENIORS", render: () => <SlideWish_k src={video} lab="Congrats Neo, You're finally free"/> },
+  { id: "wishe_k", title: "WISHES FROM OUR SENIORS", render: () => <SlideWish_k src={video1} lab="Congrats Neo, You're finally free"/> },
+  { id: "wishe_k", title: "WISHES FROM OUR SENIORS", render: () => <SlideWish_k src={video2} lab="Congrats Neo, You're finally free"/> },
   { id: "music", title: "MUSIC PERFORMANCE", render: () => <SlideMusic /> },
   { id: "memes", title: "memes", render: () => <SlideMemes /> },
   { id: "memes", title: "memes", render: () => <SlideMeme name="Our Target" tar="Target Acquired" tar2="Initiating meme protocol..." lab="01/18"/> },
