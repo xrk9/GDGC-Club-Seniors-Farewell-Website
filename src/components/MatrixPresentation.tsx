@@ -23,7 +23,7 @@ import { SlideEnding } from "./slides/SlideEnding";
 import { SlideMusicIntro } from "./slides/SlideMusicIntro";
 
 // videos here
-import video from "@/assets/music.jpg"
+import video from "@/assets/senior_vdo.mp4"
 
 // images here
 import cake from "@/assets/test.jpg"
