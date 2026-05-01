@@ -27,11 +27,13 @@ import { SlideTorSRules } from "./slides/SlideTorSRules";
 import { SlideConfess } from "./slides/SlideConfess";
 
 // Images here
-import who1 from "@/assets/meme4.jpg"
+import who1 from "@/assets/child1.jpeg"
+import who2 from "@/assets/child2.jpeg"
+import who3 from "@/assets/child3.jpeg"
 
 // videos here
 import video1 from "@/assets/senior_vdo.mp4"
-import video2 from "@/assets/senior2.mp4"
+import video2 from "@/assets/senior3.mp4"
 import video3 from "@/assets/senior5.mp4"
 
 type Slide = {
@@ -59,7 +61,9 @@ const SLIDES: Slide[] = [
   { id: "confessions", title: "confessions", render: () => <SlideMeme_k src={who1} lab="I know Kungfu"/> },
 
   // ~ Guess Who
-  { id: "guess who", title: "I got my eyes on you", render: () => <SlideWho src = {who1} name="Our Target" tar="Guess Who?" tar2="From the Childhood Photo" lab="01/18"/> },
+  { id: "guess who", title: "I got my eyes on you", render: () => <SlideWho src = {who1} name="He's our Target" tar="Guess who?" tar2="From the Childhood Photo" lab="01/18"/> },
+  { id: "guess who", title: "I got my eyes on you", render: () => <SlideWho src = {who2} name="Little guy" tar="Guess Who?" tar2="From the Childhood Photo" lab="01/18"/> },
+  { id: "guess who", title: "I got my eyes on you", render: () => <SlideWho src = {who3} name="Innocence" tar="Guess Who?" tar2="From the Childhood Photo" lab="01/18"/> },
   
   //// { id: "bonus", title: "bonus content", render: () => <SlideBonus /> },
   
@@ -74,11 +78,8 @@ const SLIDES: Slide[] = [
   // ~ Drinking Ceremony   
   { id: "drink", title: "i got more than you thought", render: () => <SlideDrink /> },
   // ~ Who is most likely to
-  // ! need to add them
-  // TODO : 1.Guess the person from the photo
-  // TODO :     Two slides - one ask, other photo
-  { id: "Make it count", title: "He's beginning to believe", render: () => <SlideGames /> },
-  { id: "Make it count", title: "He's beginning to believe", render: () => <SlideGames2 /> },
+  { id: "who's most likely", title: "He's beginning to believe", render: () => <SlideGames /> },
+  { id: "who's most likely", title: "He's beginning to believe", render: () => <SlideGames2 /> },
   // ~ End ?
   { id: "end", title: "end ?", render: () => <SlideMore /> },
   // ~ Damsharaj
