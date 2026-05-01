@@ -32,7 +32,7 @@ import who1 from "@/assets/meme4.jpg"
 // videos here
 import video1 from "@/assets/senior_vdo.mp4"
 import video2 from "@/assets/senior2.mp4"
-import video3 from "@/assets/senior3.mp4"
+import video3 from "@/assets/senior5.mp4"
 
 type Slide = {
   id: string;
