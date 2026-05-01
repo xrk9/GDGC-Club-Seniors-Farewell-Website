@@ -6,15 +6,11 @@ export function SlideGettingStarted() {
     // 1. Ensure the parent is transparent so the Rain behind it shows through
     <div className="relative flex flex-col h-full w-full items-center justify-center px-12 overflow-hidden bg-transparent">
       
-      {/* 2. THE MIC BACKGROUND */}
+      {/* 2. THE  BACKGROUND */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img 
           src={rabbit} 
           alt="background rabit"
-          /* 'opacity-20' is the key: it lets the Rain behind it be visible.
-             'mix-blend-lighten' or 'mix-blend-screen' will make the rain 
-             look like it's glowing ON the metallic parts of the mic.
-          */
           className="w-full h-full object-cover opacity-25 grayscale brightness-75 contrast-150 mix-blend-screen"
         />
         
@@ -38,7 +34,7 @@ export function SlideGettingStarted() {
               "THE SHOW ISN'T OVER YET.",
             ]}
             speed={32}
-            revealOnClick={true}
+            revealOnClick={false}
           />
         </div>
       </div>

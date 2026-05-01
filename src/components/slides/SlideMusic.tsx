@@ -11,10 +11,6 @@ export function SlideMusic() {
         <img 
           src={micImage} 
           alt="background mic"
-          /* 'opacity-20' is the key: it lets the Rain behind it be visible.
-             'mix-blend-lighten' or 'mix-blend-screen' will make the rain 
-             look like it's glowing ON the metallic parts of the mic.
-          */
           className="w-full h-full object-cover opacity-25 grayscale brightness-75 contrast-150 mix-blend-screen"
         />
         

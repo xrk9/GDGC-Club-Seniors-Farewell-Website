@@ -1,6 +1,4 @@
-/**
- * Decorative animated bar audio visualizer.
- */
+// audio shake during slide change
 export function AudioViz({ bars = 48 }: { bars?: number }) {
   return (
     <div className="flex items-end gap-[3px] h-32 w-full px-2">
