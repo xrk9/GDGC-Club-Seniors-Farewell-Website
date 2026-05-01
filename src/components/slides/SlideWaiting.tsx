@@ -8,7 +8,7 @@ export function SlideWaiting() {
       </div>
       <div className="text-5xl md:text-7xl font-light tracking-tight matrix-glow-text-strong text-center">
         <Typewriter
-          lines={["Welcome in the simulation..."]}
+          lines={["Welcome to the simulation..."]}
           speed={60}
           showPrompt={false}
           loop={true}

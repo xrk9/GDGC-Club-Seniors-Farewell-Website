@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 
-/**
- * Persistent slow digital rain. Sits behind everything at low opacity.
- */
+// background digital rain
 export function DigitalRain() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -35,7 +33,7 @@ export function DigitalRain() {
 
     let raf = 0;
     let last = 0;
-    const stepMs = 90; // slow
+    const stepMs = 90; // keeping it slow
 
     const draw = (t: number) => {
       if (t - last >= stepMs) {

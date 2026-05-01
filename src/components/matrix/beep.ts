@@ -1,7 +1,4 @@
-/**
- * Generate a short subtle beep on slide transitions, using WebAudio.
- * No assets required.
- */
+// beep sound
 let ctx: AudioContext | null = null;
 
 function getCtx(): AudioContext | null {

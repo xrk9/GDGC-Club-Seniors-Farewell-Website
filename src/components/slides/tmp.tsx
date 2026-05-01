@@ -1,9 +1,8 @@
-import memePerson from "@/assets/cake.jpg"; // ← Replace with the actual photo of the person
+import memePerson from "@/assets/cake.jpg";
 
 export function SlideMeme() {
   return (
     <div className="relative flex flex-col h-full w-full overflow-hidden bg-black px-12 md:px-20 py-12">
-      {/* Subtle animated Matrix digital rain background */}
       <div className="absolute inset-0 matrix-rain opacity-30 pointer-events-none" />
 
       <div className="flex items-baseline justify-between mb-8 relative z-10">

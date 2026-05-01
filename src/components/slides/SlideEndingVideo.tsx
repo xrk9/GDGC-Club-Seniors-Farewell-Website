@@ -1,5 +1,5 @@
 import { MediaFrame } from "../matrix/MediaFrame";
-import endingImg from "@/assets/ending.jpg";
+import endingImg from "@/assets/group.mp4";
 
 export function SlideEndingVideo() {
   return (
@@ -9,7 +9,7 @@ export function SlideEndingVideo() {
       {/* Wrapper to constrain the width so it doesn't fill the whole screen */}
       <div className="w-full max-w-7xl flex flex-col gap-4">
         
-        {/* Top Header Labels */}
+        {/* Top   */}
         <div className="flex items-baseline justify-between px-1">
           <div className="text-matrix-dim text-[10px] md:text-xs tracking-[0.4em] matrix-glow-text opacity-90">
             // ONE FINAL ENCRYPTION REMAINS
@@ -19,12 +19,12 @@ export function SlideEndingVideo() {
           </div>
         </div>
 
-        {/* The Frame: Set to 16/9 */}
         <MediaFrame aspect="16/9">
-          <img 
+          <video 
             src={endingImg} 
-            alt="ending feed" 
-            className="w-full h-full object-contain bg-black" 
+            className="w-full h-full object-contain bg-white" 
+            autoPlay={true}
+            playsInline={true}
           />
         </MediaFrame>
 

@@ -176,7 +176,7 @@
 }
 .crt-frame img,
 .crt-frame video {
-  filter: contrast(1.1) saturate(0.4) hue-rotate(70deg) brightness(0.85);
+  filter: contrast(1.1) saturate(0.7) hue-rotate(70deg) brightness(0.95);
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -186,7 +186,7 @@
 .crt-frame .crt-tint {
   position: absolute;
   inset: 0;
-  background: rgba(0, 60, 20, 0.25);
+  background: rgba(0, 60, 20, 0.20);
   mix-blend-mode: screen;
   pointer-events: none;
   z-index: 3;

@@ -39,7 +39,7 @@ export function Typewriter({
   const [scrambleCount, setScrambleCount] = useState(0);
   const [randomChar, setRandomChar] = useState("");
   
-  // New state to track if we are paused waiting for a user click
+  // slide 2 : pause fora  click
   const [waitingForClick, setWaitingForClick] = useState(false);
 
   // Initial Start Delay
@@ -50,9 +50,9 @@ export function Typewriter({
 
   useEffect(() => {
     if (!started) return;
-    if (waitingForClick) return; // Halt the typing cycle if waiting for user input
+    if (waitingForClick) return; // hold until user click
 
-    // --- DELETING LOGIC ---
+    // deletion logic
     if (isDeleting) {
       const t = setTimeout(() => {
         if (charIdx > 0) {
@@ -64,7 +64,7 @@ export function Typewriter({
           setLineIdx(prevLineIdx);
           setCharIdx(lines[prevLineIdx].length);
         } else {
-          // Everything is deleted, wait a moment before typing again
+          // after fully deleting, pause
           const t = setTimeout(() => {
             setIsDeleting(false);
           }, pauseDuration / 2); 
@@ -74,9 +74,9 @@ export function Typewriter({
       return () => clearTimeout(t);
     }
 
-    // --- TYPING LOGIC ---
+    // typing
     if (lineIdx >= lines.length) {
-      // We reached the end of all lines
+      // Reached the end
       if (loop) {
         const t = setTimeout(() => setIsDeleting(true), pauseDuration);
         return () => clearTimeout(t);
@@ -88,7 +88,6 @@ export function Typewriter({
 
     // End of a line (but not the last line)
     if (charIdx >= currentLine.length) {
-      // If revealOnClick is true, pause and wait instead of auto-advancing
       if (revealOnClick && lineIdx + 1 < lines.length) {
         setWaitingForClick(true);
         return;
@@ -108,7 +107,7 @@ export function Typewriter({
       return () => clearTimeout(t);
     }
 
-    // Handle spaces (skip scramble)
+    // spaces have no scramble
     if (currentLine[charIdx] === " ") {
       const t = setTimeout(() => {
         setCharIdx((c) => c + 1);
@@ -179,7 +178,6 @@ export function Typewriter({
             text += randomChar;
           }
 
-          // THE FIX: Check if we are done typing the very last line
           const isFinished = !loop && isCurrentLine && i === lines.length - 1 && charIdx >= line.length && !isDeleting;
 
           return (
@@ -187,7 +185,7 @@ export function Typewriter({
               {showPrompt && <span className="text-matrix-dim mr-2 shrink-0">{">"}</span>}
               <span>
                 {text}
-                {/* Only show the cursor if it's the current line AND we aren't completely finished */}
+                {/* Gemeni Added this, don't ask me what it does */}
                 {isCurrentLine && !isFinished && (
                   <span className={`animate-blink inline-block ml-0.5 font-light text-[#00FF41] ${waitingForClick ? "opacity-100" : ""}`}>|</span>
                 )}

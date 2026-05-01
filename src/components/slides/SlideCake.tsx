@@ -1,6 +1,6 @@
 import { MediaFrame } from "../matrix/MediaFrame";
-import cake from "@/assets/cake.jpg";
 import { Typewriter } from "../matrix/Typewriter";
+import cake from "@/assets/cake.jpg";
 
 export function SlideCake() {
   return (
@@ -17,12 +17,8 @@ export function SlideCake() {
         />
         </h1>
         <p className="mt-6 text-matrix-dim text-lg tracking-widest matrix-glow-text">
-          <Typewriter
-          lines={["> We came here to eat the cake","> Reality is here"]}
-          startDelay={2500}
-          speed={45}
-          showPrompt={false}
-        />
+          <span>&gt; We came here to eat the cake</span><br />
+          <span>&gt; Reality is here</span>
         </p>
       </div>
       <div className="md:col-span-7">
